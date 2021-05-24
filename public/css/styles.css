@@ -7,3 +7,82 @@ body {
 .container-center {
   text-align: center;
 }
+
+#creation-form {
+  width: 400px;
+}
+
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  box-shadow: 0px 0px 20px #00000020;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
+.form-group {
+  width: 100%;
+  margin-top: 20px;
+}
+.form-group input {
+  width: 100%;
+  border: 1.5px solid rgba(128, 128, 128, 0.418);
+  padding: 5px;
+  font-size: 18px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+button.next-btn,
+button.previous-btn,
+button.submit-btn {
+  float: right;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  background-color: rgb(180, 220, 255);
+  font-family: "Montserrat";
+  font-size: 18px;
+  cursor: pointer;
+  /* text-align: right; */
+}
+button.previous-btn {
+  float: left;
+}
+button.submit-btn {
+  background-color: aquamarine;
+}
+
+.btn-create {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 400px;
+}
+
+.btn-success {
+  margin: 5px;
+}
+
+.btn-warning {
+  margin: 5px;
+}
+
+.roll-card {
+  margin: 10px;
+  box-shadow: 0px 0px 20px #00000020;
+  outline-style: unset;
+}
+
+.pd-card {
+  padding: 5px;
+}
