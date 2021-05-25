@@ -36,6 +36,10 @@ function between(x, min, max) {
     return x >= min && x <= max;
 }
 
+function getBonus(attribute) {
+    return Math.trunc(attribute/10)
+}
+
 function rollRace(roll) {
     if (between(roll, 1, 89)) {
         return "Człowiek"
@@ -89,18 +93,124 @@ function onRaceAccept() {
     document.getElementById("race-accept-pd").remove()
     document.getElementById("race-choice-form").remove()
     document.getElementById("race-accept-nopd").remove()
+    rollAttributes()
 }
 
 function onRaceChoose() {
-    race = document.getElementById("race-choice-form").value
+    characterSheet.race = document.getElementById("race-choice-form").value
     document.getElementById("race-card").innerHTML = "Wybrana rasa <br><hr>" + characterSheet.race
     document.getElementById("race-accept-pd").remove()
     document.getElementById("race-choice-form").remove()
     document.getElementById("race-accept-nopd").remove()
+    rollAttributes()
 }
 
 function rollAttributes() {
-    if (characterSheet.race = "Człowiek") {
+    if (characterSheet.race == "Człowiek") {
+
+        // Attributes
+        characterSheet.attributes.WW = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.US = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.S = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Wt = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.I = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zw = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zr = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Int = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.SW = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Ogd = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        // Other
+        characterSheet.attributes.Żyw = getBonus(characterSheet.attributes.S) + 2*getBonus(characterSheet.attributes.Wt) + getBonus(characterSheet.attributes.SW)
+        characterSheet.attributes.PP = 2
+        characterSheet.attributes.PB = 1
+        characterSheet.attributes.PS = 2
+        characterSheet.attributes.PDet = 1
+        characterSheet.attributes.DP = 3
+        characterSheet.attributes.Szyb = 4
+
+    } else if (characterSheet.race == "Krasnolud") {
+        // Attributes
+        characterSheet.attributes.WW = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.US = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.S = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Wt = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.I = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zw = 10 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zr = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Int = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.SW = 40 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Ogd = 10 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        // Other
+        characterSheet.attributes.Żyw = getBonus(characterSheet.attributes.S) + 2*getBonus(characterSheet.attributes.Wt) + getBonus(characterSheet.attributes.SW)
+        characterSheet.attributes.PP = 2
+        characterSheet.attributes.PB = 1
+        characterSheet.attributes.PS = 2
+        characterSheet.attributes.PDet = 1
+        characterSheet.attributes.DP = 3
+        characterSheet.attributes.Szyb = 4
+
+    }   else if (characterSheet.race == "Niziołek") {
+        // Attributes
+        characterSheet.attributes.WW = 10 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.US = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.S = 10 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Wt = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.I = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zw = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zr = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Int = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.SW = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Ogd = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        // Other
+        characterSheet.attributes.Żyw = getBonus(characterSheet.attributes.S) + 2*getBonus(characterSheet.attributes.Wt) + getBonus(characterSheet.attributes.SW)
+        characterSheet.attributes.PP = 2
+        characterSheet.attributes.PB = 1
+        characterSheet.attributes.PS = 2
+        characterSheet.attributes.PDet = 1
+        characterSheet.attributes.DP = 3
+        characterSheet.attributes.Szyb = 4
+
+    } else if (characterSheet.race == "Gnom") {
+        // Attributes
+        characterSheet.attributes.WW = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.US = 10 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.S = 10 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Wt = 15 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.I = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zw = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zr = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Int = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.SW = 40 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Ogd = 15 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        // Other
+        characterSheet.attributes.Żyw = getBonus(characterSheet.attributes.S) + 2*getBonus(characterSheet.attributes.Wt) + getBonus(characterSheet.attributes.SW)
+        characterSheet.attributes.PP = 2
+        characterSheet.attributes.PB = 1
+        characterSheet.attributes.PS = 2
+        characterSheet.attributes.PDet = 1
+        characterSheet.attributes.DP = 3
+        characterSheet.attributes.Szyb = 4
+
+    } else if (characterSheet.race == "Wysoki Elf" || characterSheet.race == "Leśny Elf") {
+        // Attributes
+        characterSheet.attributes.WW = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.US = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.S = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Wt = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.I = 40 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zw = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Zr = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Int = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.SW = 30 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        characterSheet.attributes.Ogd = 20 + getRandomInt(1, 10) + getRandomInt(1, 10)
+        // Other
+        characterSheet.attributes.Żyw = getBonus(characterSheet.attributes.S) + 2*getBonus(characterSheet.attributes.Wt) + getBonus(characterSheet.attributes.SW)
+        characterSheet.attributes.PP = 2
+        characterSheet.attributes.PB = 1
+        characterSheet.attributes.PS = 2
+        characterSheet.attributes.PDet = 1
+        characterSheet.attributes.DP = 3
+        characterSheet.attributes.Szyb = 4
         
     }
 }
